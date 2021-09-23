@@ -1,0 +1,135 @@
+---
+title: "LiDAR Tutorial using QGIS"
+date: "`r Sys.Date()`"
+sgtemplates:
+  datatables:
+    features:
+      info: true
+      ordering: true
+      paging: true
+      searching: false
+  header:
+    phase_banner:
+      tag: "WIP"
+      text: "This is a work in progress."
+    site_branding: "Geographic Information Science and Analysis Team"
+  metadata:
+    label: "Tutorial"
+  navigation:
+    toc:
+      sticky: true
+output:
+  html_document:
+    code_download: false
+    df_print: paged
+    fig_caption: true
+    number_sections: false
+    self_contained: false
+    template: "_template.html"
+    toc: true
+    toc_depth: 2
+    toc_float: false
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+The aim of this tutorial is to guide on how to access LiDAR datasets from the Scottish Remote Sensing Portal, download the data and visualize in QGIS, a Geographic Information System software. This document is not intended to be fully comprehensive guide but brief overview and  a pointer to further resources.
+
+## LiDAR
+**LiDAR** stands for Light Detection and Ranging and  is an active remote sensing technique that uses a laser pulses to record earth surface. The LiDAR sensor emits pules of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. The integration of GNSS (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.  In addition to geographic position other attributes of the LiDAR points can be recorded, for example intensity, classification, RGB values, number of returns or scan angle. Although, not always all the attributes are provided to the end users.
+
+## LAS and LAZ files
+LiDAR points XYZ measurement, attributes and other metadata  are stored in **LAS** files, an open format considered to be an industry standard. LAZ files are compressed LAS files.
+
+## Digital Elevation Models
+**Digital Surface Model** (DSM) is a numeric representation of the earth surface produced from the first return of laser signal. DSM includes objects on its surface such as vegetation or buildings.
+**Digital Terrain Model** (DTM) is a numeric representation of the earth surface produced from the last return of laser signal. DTM shows the bear earth with vegetation and buildings removed.
+
+
+## Scottish Remote Sensing Portal
+Scottish Government and JNCC collaborates to develop an online data portal to host public sector LiDAR datasets. 
+The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data,which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). 
+All data are shared under the Open Government Licence v3 unless otherwise stated.
+The Scottish Remote Sensing Portal can be accessed at: [https://remotesensingdata.gov.scot/](https://remotesensingdata.gov.scot/).
+
+## QGIS
+
+# Downloading Data
+
+<center>
+<img src="img/image_1.png">
+</center>
+
+# Workings with LAZ
+
+### Step 2
+
+<center>
+<img src="img/image_2.png">
+</center>
+
+### Step 3
+
+<center>
+<img src="img/image_3.png">
+</center>
+
+### Step 4
+
+<center>
+<img src="img/image_4.png">
+</center>
+
+### Step 5
+
+<center>
+<img src="img/image_5.png">
+</center>
+
+### Step 6
+
+<center>
+<img src="img/image_6.png">
+</center>
+
+### Step 7
+
+<center>
+<img src="img/image_7.png">
+</center>
+
+### Step 8
+
+<center>
+<img src="img/image_8.png">
+</center>
+
+### Step 9
+
+<center>
+<img src="img/image_9.png">
+</center>
+
+### Step 10
+
+<center>
+<img src="img/image_10.png">
+</center>
+
+### Step 11
+
+<center>
+<img src="img/image_11.png">
+</center>
+
+# Working with Raster
+
+### Step 1
+
+<center>
+<img src="img/image_12.png">
+</center>
