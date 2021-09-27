@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-            <meta name="date" content="2021-09-23">
+            <meta name="date" content="2021-09-27">
     <meta name="generator" content="pandoc">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,6 +158,7 @@
                                   <li><a href="#downloading-data">Downloading Data</a></li>
                                   <li><a href="#workings-with-laz">Workings with LAZ</a></li>
                                   <li><a href="#working-with-raster">Working with Raster</a></li>
+                                  <li><a href="#resources">Resources</a></li>
                                   </ul>
                               </nav>
             </div>
@@ -171,7 +172,7 @@
                                         <dl class="ds_page-header__metadata ds_metadata">
                                               <div class="ds_metadata__item">
                           <dt class="ds_metadata__key">Last updated</dt>
-                          <dd class="ds_metadata__value">2021-09-23</dd>
+                          <dd class="ds_metadata__value">2021-09-27</dd>
                         </div>
                                                                 </dl>
                   </div>
@@ -185,7 +186,8 @@
                             <p>The aim of this tutorial is to guide on how to access LiDAR datasets from the Scottish Remote Sensing Portal, download the data and visualize in QGIS, a Geographic Information System software. This document is not intended to be fully comprehensive guide but brief overview and a pointer to further resources.</p>
                             <div id="lidar" class="section level2">
                             <h2>LiDAR</h2>
-                            <p><strong>LiDAR</strong> stands for Light Detection and Ranging and is an active remote sensing technique that uses a laser pulses to record earth surface. The LiDAR sensor emits pules of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. The integration of GNSS (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned. In addition to geographic position other attributes of the LiDAR points can be recorded, for example intensity, classification, RGB values, number of returns or scan angle. Although, not always all the attributes are provided to the end users.</p>
+                            <p><strong>LiDAR</strong> stands for Light Detection and Ranging and is an active remote sensing technique that uses a laser pulses to record earth surface. The LiDAR sensor emits pules of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. The integration of GNSS (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.<br />
+                            In addition to geographic position other attributes of the LiDAR points can be recorded, for example intensity, classification, RGB values, number of returns or scan angle. Although, not always all the attributes are provided to the end users.</p>
                             </div>
                             <div id="las-and-laz-files" class="section level2">
                             <h2>LAS and LAZ files</h2>
@@ -193,41 +195,69 @@
                             </div>
                             <div id="digital-elevation-models" class="section level2">
                             <h2>Digital Elevation Models</h2>
-                            <p><strong>Digital Surface Model</strong> (DSM) is a numeric representation of the earth surface produced from the first return of laser signal. DSM includes objects on its surface such as vegetation or buildings. <strong>Digital Terrain Model</strong> (DTM) is a numeric representation of the earth surface produced from the last return of laser signal. DTM shows the bear earth with vegetation and buildings removed.</p>
+                            <p><strong>Digital Surface Model</strong> (DSM) is a numeric representation of the earth surface produced from the first return of laser signal. DSM includes objects on its surface such as vegetation or buildings.</p>
+                            <p><strong>Digital Terrain Model</strong> (DTM) is a numeric representation of the earth surface produced from the last return of laser signal. DTM shows the bear earth with vegetation and buildings removed.</p>
                             </div>
                             <div id="scottish-remote-sensing-portal" class="section level2">
                             <h2>Scottish Remote Sensing Portal</h2>
-                            <p>Scottish Government and JNCC collaborates to develop an online data portal to host public sector LiDAR datasets. The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data,which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). All data are shared under the Open Government Licence v3 unless otherwise stated. The Scottish Remote Sensing Portal can be accessed at: <a href="https://remotesensingdata.gov.scot/">https://remotesensingdata.gov.scot/</a>.</p>
+                            <p>Scottish Government and JNCC collaborates to develop an online data portal to host public sector LiDAR datasets. The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data,which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). The data are provided as point clouds (LAZ) and raster files (GeoTIFF) All data are shared under the Open Government Licence v3 unless otherwise stated.</p>
+                            <p>The Scottish Remote Sensing Portal can be accessed at: <a href="https://remotesensingdata.gov.scot/">https://remotesensingdata.gov.scot/</a>.</p>
                             </div>
                             <div id="qgis" class="section level2">
                             <h2>QGIS</h2>
+                            <p>QGIS is a free and open source Geographic Information System created to view, edit and analyse geospatial data. The software can be freely downloaded from the project website <a href="https://qgis.org/en/site/index.html">https://qgis.org/en/site/index.html</a> and installed on various platforms including Windows, Linux and Mac OSX.</p>
+                            <p>If you are not familiar with the software it is recommened that you familiarize yourself with the documentation section - <a href="https://qgis.org/en/docs/index.html">https://qgis.org/en/docs/index.html</a></p>
                             </div>
                             </div>
                             <div id="downloading-data" class="section level1">
                             <h1>Downloading Data</h1>
+                            <p>Scottish LiDAR data can be downloaded directly from the Scottish Remote Sensing Portal. The portal provides Graphical User Interface (GUI) in the form of interactive map. The user can specify the area of interests by manipulating the size and location of a blue rectangle. Once the location is specified, the left panel will display available datasets within the area. The user can then select between LAZ, DTM and DSM files. Next, the user can select a particular tiles by highlighting and clicking on a grid square on the map or tile name on the right hand panel. The selection then is added to the <em>shopping basket</em> and available in the <em>Download</em> tab. Finally, each file needs to be downloaded separately by clicking <em>Download</em> button. The files are compressed as ZIP-files and have to be extract before loading them into QGIS.<br />
+                            In our example we have downloaded a file called <em>NX6055_4PPM_LAS_PHASE3.LAZ</em> into a data folder.</p>
+                            <br>
                             <center>
                             <img src="img/image_1.png">
                             </center>
+                            <p><br></p>
                             </div>
                             <div id="workings-with-laz" class="section level1">
                             <h1>Workings with LAZ</h1>
-                            <div id="step-2" class="section level3">
-                            <h3>Step 2</h3>
+                            <div id="open-the-file" class="section level3">
+                            <h3>Open the file</h3>
+                            <p>Once the LAZ file is downloaded and extracted it can be opened in QGIS.</p>
+                            <ul>
+                            <li>open a new project in QGIS</li>
+                            <li>open <em>Data Source Manager</em> and select <em>Point Cloud</em> Tab</li>
+                            <li>navigate to the LAZ file location and add to the map view</li>
+                            <li>alternatively you can drag and drop the file from the file browser</li>
+                            </ul>
+                            <br>
                             <center>
                             <img src="img/image_2.png">
                             </center>
+                            <p><br></p>
+                            <p>After adding the file QGIS will create a new sub-directory for EPT files indexing the LiDAR points. As a result when panning and zooming QGIS will render only subset of points for better performance.</p>
                             </div>
-                            <div id="step-3" class="section level3">
-                            <h3>Step 3</h3>
+                            <div id="check-crs" class="section level3">
+                            <h3>Check CRS</h3>
+                            <p>Point Cloud should have Coordinate Reference System (CRS) assigned but it is not always a case and sometimes we have to specify the projection manually.</p>
+                            <ul>
+                            <li>right click on the question mark next to file name</li>
+                            <li>specify the CRS to OSGB 1936 / British National Grid (EPSG:27700)</li>
+                            </ul>
+                            <br>
                             <center>
                             <img src="img/image_3.png">
                             </center>
+                            <p><br></p>
                             </div>
-                            <div id="step-4" class="section level3">
-                            <h3>Step 4</h3>
+                            <div id="investigate-attributes" class="section level3">
+                            <h3>Investigate Attributes</h3>
+                            <p>Once the file loaded QGIS is looking at the attribute stored in the point cloud in order to apply style for visualisation - it defaults to RGB then Classification and finally Z values. In our example there is no RGB attributes and the points are visualized based on the classification.</p>
+                            <br>
                             <center>
                             <img src="img/image_4.png">
                             </center>
+                            <p><br></p>
                             </div>
                             <div id="step-5" class="section level3">
                             <h3>Step 5</h3>
@@ -274,12 +304,9 @@
                             </div>
                             <div id="working-with-raster" class="section level1">
                             <h1>Working with Raster</h1>
-                            <div id="step-1" class="section level3">
-                            <h3>Step 1</h3>
-                            <center>
-                            <img src="img/image_12.png">
-                            </center>
                             </div>
+                            <div id="resources" class="section level1">
+                            <h1>Resources</h1>
                             </div>
             </div>
             
