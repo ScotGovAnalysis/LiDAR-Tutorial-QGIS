@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-            <meta name="date" content="2021-09-27">
+            <meta name="date" content="2021-09-28">
     <meta name="generator" content="pandoc">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,7 +158,8 @@
                                   <li><a href="#downloading-data">Downloading Data</a></li>
                                   <li><a href="#workings-with-laz">Workings with LAZ</a></li>
                                   <li><a href="#working-with-raster">Working with Raster</a></li>
-                                  <li><a href="#resources">Resources</a></li>
+                                  <li><a href="#references">References</a></li>
+                                  <li><a href="#faq">FAQ</a></li>
                                   </ul>
                               </nav>
             </div>
@@ -172,7 +173,7 @@
                                         <dl class="ds_page-header__metadata ds_metadata">
                                               <div class="ds_metadata__item">
                           <dt class="ds_metadata__key">Last updated</dt>
-                          <dd class="ds_metadata__value">2021-09-27</dd>
+                          <dd class="ds_metadata__value">2021-09-28</dd>
                         </div>
                                                                 </dl>
                   </div>
@@ -183,15 +184,15 @@
             <div class="ds_layout__content toc-content">
                             <div id="introduction" class="section level1">
                             <h1>Introduction</h1>
-                            <p>The aim of this tutorial is to guide on how to access LiDAR datasets from the Scottish Remote Sensing Portal, download the data and visualize in QGIS, a Geographic Information System software. This document is not intended to be fully comprehensive guide but brief overview and a pointer to further resources.</p>
+                            <p>This tutorial aims to guide on how to access LiDAR data from the Scottish Remote Sensing Portal, download the data and visualize it in QGIS, a Geographic Information System software. This document is not intended to be a fully comprehensive guide but a brief overview and a pointer to further resources.</p>
                             <div id="lidar" class="section level2">
                             <h2>LiDAR</h2>
-                            <p><strong>LiDAR</strong> stands for Light Detection and Ranging and is an active remote sensing technique that uses a laser pulses to record earth surface. The LiDAR sensor emits pules of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. The integration of GNSS (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.<br />
-                            In addition to geographic position other attributes of the LiDAR points can be recorded, for example intensity, classification, RGB values, number of returns or scan angle. Although, not always all the attributes are provided to the end users.</p>
+                            <p><strong>LiDAR</strong> stands for Light Detection and Ranging and is an active remote sensing technique that records the earth surface. The LiDAR sensor emits pulses of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. The integration of <strong>GNSS</strong> (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.<br />
+                            In addition to geographic position other attributes of the LiDAR points can be recorded, for example, intensity, classification, RGB values, number of returns or scan angle. Although, not always all the attributes are provided to the end-users.</p>
                             </div>
                             <div id="las-and-laz-files" class="section level2">
                             <h2>LAS and LAZ files</h2>
-                            <p>LiDAR points XYZ measurement, attributes and other metadata are stored in <strong>LAS</strong> files, an open format considered to be an industry standard. LAZ files are compressed LAS files.</p>
+                            <p>LiDAR points XYZ measurement, attributes and other metadata are stored in <strong>LAS</strong> files, an open format considered to be an industry standard. <strong>LAZ</strong> files are compressed LAS files.</p>
                             </div>
                             <div id="digital-elevation-models" class="section level2">
                             <h2>Digital Elevation Models</h2>
@@ -200,19 +201,19 @@
                             </div>
                             <div id="scottish-remote-sensing-portal" class="section level2">
                             <h2>Scottish Remote Sensing Portal</h2>
-                            <p>Scottish Government and JNCC collaborates to develop an online data portal to host public sector LiDAR datasets. The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data,which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). The data are provided as point clouds (LAZ) and raster files (GeoTIFF) All data are shared under the Open Government Licence v3 unless otherwise stated.</p>
-                            <p>The Scottish Remote Sensing Portal can be accessed at: <a href="https://remotesensingdata.gov.scot/">https://remotesensingdata.gov.scot/</a>.</p>
+                            <p>Scottish Government and JNCC collaborate to develop an online data portal to host public sector LiDAR datasets. The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data, which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). The data are provided as point clouds (LAZ) and raster files (GeoTIFF) All data are shared under the Open Government License v3 unless otherwise stated.<br />
+                            The Scottish Remote Sensing Portal can be accessed following this link <a href="https://remotesensingdata.gov.scot/">https://remotesensingdata.gov.scot/</a>.</p>
                             </div>
                             <div id="qgis" class="section level2">
                             <h2>QGIS</h2>
-                            <p>QGIS is a free and open source Geographic Information System created to view, edit and analyse geospatial data. The software can be freely downloaded from the project website <a href="https://qgis.org/en/site/index.html">https://qgis.org/en/site/index.html</a> and installed on various platforms including Windows, Linux and Mac OSX.</p>
-                            <p>If you are not familiar with the software it is recommened that you familiarize yourself with the documentation section - <a href="https://qgis.org/en/docs/index.html">https://qgis.org/en/docs/index.html</a></p>
+                            <p><strong>QGIS</strong> is a free and open-source Geographic Information System created to view, edit and analyse geospatial data. The software can be freely downloaded from the project website - <a href="https://qgis.org/en/site/index.html">https://qgis.org/en/site/index.html</a> - and installed on various platforms including Windows, Linux and Mac OSX.</p>
+                            <p>If you are not familiar with the software it is recommended that you familiarize yourself with the documentation section - <a href="https://qgis.org/en/docs/index.html">https://qgis.org/en/docs/index.html</a></p>
                             </div>
                             </div>
                             <div id="downloading-data" class="section level1">
                             <h1>Downloading Data</h1>
-                            <p>Scottish LiDAR data can be downloaded directly from the Scottish Remote Sensing Portal. The portal provides Graphical User Interface (GUI) in the form of interactive map. The user can specify the area of interests by manipulating the size and location of a blue rectangle. Once the location is specified, the left panel will display available datasets within the area. The user can then select between LAZ, DTM and DSM files. Next, the user can select a particular tiles by highlighting and clicking on a grid square on the map or tile name on the right hand panel. The selection then is added to the <em>shopping basket</em> and available in the <em>Download</em> tab. Finally, each file needs to be downloaded separately by clicking <em>Download</em> button. The files are compressed as ZIP-files and have to be extract before loading them into QGIS.<br />
-                            In our example we have downloaded a file called <em>NX6055_4PPM_LAS_PHASE3.LAZ</em> into a data folder.</p>
+                            <p>Scottish LiDAR data can be downloaded directly from the Scottish Remote Sensing Portal. The portal provides Graphical User Interface (GUI) in the form of an interactive map. The user can specify the area of interest by manipulating the size and location of a blue rectangle. Once the location is specified, the left panel will display available datasets within the area. The user can then select between LAZ, DTM and DSM files. Next, the user can select particular tiles by highlighting and clicking on a grid square on the map or tile name on the right-hand panel. The selection then is added to the <em>shopping basket</em> and available in the <em>Download</em> tab. Finally, each file needs to be downloaded separately by clicking the <em>Download</em> button. The files are compressed as ZIP files and have to be extracted before loading them into QGIS.<br />
+                            In our example, we have downloaded a file called <em>NX6055_4PPM_LAS_PHASE3.LAZ</em> into a data folder.</p>
                             <br>
                             <center>
                             <img src="img/image_1.png">
@@ -226,7 +227,7 @@
                             <p>Once the LAZ file is downloaded and extracted it can be opened in QGIS.</p>
                             <ul>
                             <li>open a new project in QGIS</li>
-                            <li>open <em>Data Source Manager</em> and select <em>Point Cloud</em> Tab</li>
+                            <li>open <em>Data Source Manager</em> and select <em>Point Cloud</em> tab</li>
                             <li>navigate to the LAZ file location and add to the map view</li>
                             <li>alternatively you can drag and drop the file from the file browser</li>
                             </ul>
@@ -235,13 +236,13 @@
                             <img src="img/image_2.png">
                             </center>
                             <p><br></p>
-                            <p>After adding the file QGIS will create a new sub-directory for EPT files indexing the LiDAR points. As a result when panning and zooming QGIS will render only subset of points for better performance.</p>
+                            <p>After adding the file QGIS will create a new sub-directory for EPT files indexing the LiDAR points. As a result, when panning and zooming QGIS will render only a subset of points for better performance.</p>
                             </div>
                             <div id="check-crs" class="section level3">
                             <h3>Check CRS</h3>
                             <p>Point Cloud should have Coordinate Reference System (CRS) assigned but it is not always a case and sometimes we have to specify the projection manually.</p>
                             <ul>
-                            <li>right click on the question mark next to file name</li>
+                            <li>right-click on the question mark next to the filename</li>
                             <li>specify the CRS to OSGB 1936 / British National Grid (EPSG:27700)</li>
                             </ul>
                             <br>
@@ -252,61 +253,71 @@
                             </div>
                             <div id="investigate-attributes" class="section level3">
                             <h3>Investigate Attributes</h3>
-                            <p>Once the file loaded QGIS is looking at the attribute stored in the point cloud in order to apply style for visualisation - it defaults to RGB then Classification and finally Z values. In our example there is no RGB attributes and the points are visualized based on the classification.</p>
+                            <p>Once the file is loaded QGIS is looking at the attributes stored in the point cloud to apply appropriate colouring. In our example, the points are visualized based on the classification (Ground, Vegetation, Building, and so on)</p>
                             <br>
                             <center>
                             <img src="img/image_4.png">
                             </center>
                             <p><br></p>
-                            </div>
-                            <div id="step-5" class="section level3">
-                            <h3>Step 5</h3>
+                            <p>The Identify Map Tool can be used to investigate further information about specific point attributes e.g. XYZ or Intensity.</p>
+                            <br>
                             <center>
                             <img src="img/image_5.png">
                             </center>
-                            </div>
-                            <div id="step-6" class="section level3">
-                            <h3>Step 6</h3>
+                            <p><br></p>
+                            <p>The Layer Styling Panel allows changing the point visualization using the additional attributes.</p>
+                            <ul>
+                            <li><p>in the panel change the rendering from <em>Classification</em> to <em>Attribute by Ramp</em></p></li>
+                            <li><p>select the <em>Z</em> value to shade the points based on their height</p></li>
+                            </ul>
+                            <br>
                             <center>
                             <img src="img/image_6.png">
                             </center>
-                            </div>
-                            <div id="step-7" class="section level3">
-                            <h3>Step 7</h3>
-                            <center>
-                            <img src="img/image_7.png">
-                            </center>
-                            </div>
-                            <div id="step-8" class="section level3">
-                            <h3>Step 8</h3>
-                            <center>
-                            <img src="img/image_8.png">
-                            </center>
-                            </div>
-                            <div id="step-9" class="section level3">
-                            <h3>Step 9</h3>
+                            <p><br></p>
+                            <p>The summary statistics of the attributes can be accessed in the layer properties.</p>
+                            <ul>
+                            <li><p>right-click on the file in the Table of Contents (TOC)</p></li>
+                            <li><p>select <em>Properties</em> and click on the <em>Statistics</em> tab</p></li>
+                            </ul>
                             <center>
                             <img src="img/image_9.png">
                             </center>
                             </div>
-                            <div id="step-10" class="section level3">
-                            <h3>Step 10</h3>
+                            <div id="d-map-view" class="section level3">
+                            <h3>3D map view</h3>
+                            <p>QGIS can also visualize the points in 3 dimensions.</p>
+                            <ul>
+                            <li><p>go to <em>View</em> and select <em>New 3D Map View</em></p></li>
+                            <li><p>go to Layer Styling Panel and select the <em>3D View</em> Tab - change the rendering to <em>Attribute by Ramp</em> and Attribute to <em>z</em></p></li>
+                            <li><p>in the same Layer Styling Panel select <em>Symbology</em> and change rendering to <em>Extent Only</em></p></li>
+                            <li><p>use the navigation tools in 3D view to zoom and rotate the scene</p></li>
+                            </ul>
+                            <br>
                             <center>
                             <img src="img/image_10.png">
                             </center>
-                            </div>
-                            <div id="step-11" class="section level3">
-                            <h3>Step 11</h3>
+                            <p><br></p>
+                            <p>It is possible to achieve more realistic rendering of the terrain by clicking on the <em>Options</em> and selecting <em>Show Eye Dome Lightning</em>.</p>
+                            <br>
                             <center>
                             <img src="img/image_11.png">
                             </center>
+                            <p><br></p>
                             </div>
                             </div>
                             <div id="working-with-raster" class="section level1">
                             <h1>Working with Raster</h1>
+                            <p>…</p>
                             </div>
-                            <div id="resources" class="section level1">
-                            <h1>Resources</h1>
+                            <div id="references" class="section level1">
+                            <h1>References</h1>
+                            <p><a href="https://hub.jncc.gov.uk/assets/ff3a1a65-d423-41ed-9606-750009dca33a">A synthesis of best practice to ensure and evaluate the quality of LiDAR data</a></p>
+                            <p><a href="https://www.youtube.com/watch?v=Zpw4XfiB47E">QGIS Point Cloud Walkthrough - VIDEO</a></p>
+                            </div>
+                            <div id="faq" class="section level1">
+                            <h1>FAQ</h1>
+                            <p>…</p>
                             </div>
             </div>
             
