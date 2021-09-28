@@ -37,21 +37,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-The aim of this tutorial is to guide on how to access LiDAR datasets from the Scottish Remote Sensing Portal, download the data and visualize in QGIS, a Geographic Information System software. 
-This document is not intended to be fully comprehensive guide but brief overview and  a pointer to further resources.
+This tutorial aims to guide on how to access LiDAR data from the Scottish Remote Sensing Portal, download the data and visualize it in QGIS, a Geographic Information System software. 
+This document is not intended to be a fully comprehensive guide but a brief overview and a pointer to further resources.
 
 ## LiDAR
 
-**LiDAR** stands for Light Detection and Ranging and  is an active remote sensing technique that uses a laser pulses to record earth surface. 
-The LiDAR sensor emits pules of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. 
-The integration of GNSS (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.  
-In addition to geographic position other attributes of the LiDAR points can be recorded, for example intensity, classification, RGB values, number of returns or scan angle. 
-Although, not always all the attributes are provided to the end users.
+**LiDAR** stands for Light Detection and Ranging and is an active remote sensing technique that records the earth surface. 
+The LiDAR sensor emits pulses of laser and measures properties of the reflected light - the timings, the angles and the wavelengths. 
+The integration of **GNSS** (Global Navigation Satellite System) permits to accurately define the location (XYZ coordinates) of the point from which the signal was returned.  
+In addition to geographic position other attributes of the LiDAR points can be recorded, for example, intensity, classification, RGB values, number of returns or scan angle. 
+Although, not always all the attributes are provided to the end-users.
 
 ## LAS and LAZ files
 
-LiDAR points XYZ measurement, attributes and other metadata  are stored in **LAS** files, an open format considered to be an industry standard. 
-LAZ files are compressed LAS files.
+LiDAR points XYZ measurement, attributes and other metadata are stored in **LAS** files, an open format considered to be an industry standard. 
+**LAZ** files are compressed LAS files.
 
 ## Digital Elevation Models
 
@@ -61,32 +61,32 @@ LAZ files are compressed LAS files.
 
 ## Scottish Remote Sensing Portal
 
-Scottish Government and JNCC collaborates to develop an online data portal to host public sector LiDAR datasets. 
-The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data,which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). 
+Scottish Government and JNCC collaborate to develop an online data portal to host public sector LiDAR datasets. 
+The Scottish Remote Sensing Portal currently provides access to three sets of Scottish public sector airborne LiDAR data, which can be downloaded as 10km tiles or accessed via Web Map Services (WMS). 
 The data are provided as point clouds (LAZ) and raster files (GeoTIFF)
-All data are shared under the Open Government Licence v3 unless otherwise stated.
-
-The Scottish Remote Sensing Portal can be accessed at: [https://remotesensingdata.gov.scot/](https://remotesensingdata.gov.scot/).
+All data are shared under the Open Government License v3 unless otherwise stated.  
+The Scottish Remote Sensing Portal can be accessed following this link [https://remotesensingdata.gov.scot/](https://remotesensingdata.gov.scot/).
 
 ## QGIS
 
-QGIS is a free and open source Geographic Information System created to view, edit and analyse geospatial data.
-The software  can be freely downloaded from the project website [https://qgis.org/en/site/index.html](https://qgis.org/en/site/index.html) and installed on various platforms including Windows, Linux and Mac OSX.
+**QGIS** is a free and open-source Geographic Information System created to view, edit and analyse geospatial data.
+The software  can be freely downloaded from the project website - [https://qgis.org/en/site/index.html](https://qgis.org/en/site/index.html) -
+and installed on various platforms including Windows, Linux and Mac OSX.
 
-If you are not familiar with the software it is recommened that you familiarize yourself with the documentation section - [https://qgis.org/en/docs/index.html](https://qgis.org/en/docs/index.html)
+If you are not familiar with the software it is recommended that you familiarize yourself with the documentation section - [https://qgis.org/en/docs/index.html](https://qgis.org/en/docs/index.html)
 
 # Downloading Data
 
 Scottish LiDAR data can be downloaded directly from the Scottish Remote Sensing Portal.
-The portal provides Graphical User Interface (GUI) in the form of interactive map.
-The user can specify the area of interests by manipulating the size and location of a blue rectangle.
+The portal provides Graphical User Interface (GUI) in the form of an interactive map.
+The user can specify the area of interest by manipulating the size and location of a blue rectangle.
 Once the location is specified, the left panel will display available datasets within the area. 
 The user can then select between LAZ, DTM and DSM files.
-Next, the user can select a particular tiles by highlighting and clicking on a grid square on the map or tile name on the right hand panel.
+Next, the user can select particular tiles by highlighting and clicking on a grid square on the map or tile name on the right-hand panel.
 The selection then is added to the *shopping basket* and available in the *Download* tab.
-Finally, each file needs to be downloaded separately by clicking *Download* button.
-The files are compressed as ZIP-files and have to be extract before loading them into QGIS.       
-In our example we have downloaded a file called *NX6055_4PPM_LAS_PHASE3.LAZ* into a data folder.
+Finally, each file needs to be downloaded separately by clicking the *Download* button.
+The files are compressed as ZIP files and have to be extracted before loading them into QGIS.       
+In our example, we have downloaded a file called *NX6055_4PPM_LAS_PHASE3.LAZ* into a data folder.
 
 <br>
 <center>
@@ -101,7 +101,7 @@ In our example we have downloaded a file called *NX6055_4PPM_LAS_PHASE3.LAZ* int
 Once the LAZ file is downloaded and extracted it can be opened in QGIS.
 
 * open a new project in QGIS
-* open *Data Source Manager* and select *Point Cloud* Tab
+* open *Data Source Manager* and select *Point Cloud* tab
 * navigate to the LAZ file location and add to the map view
 * alternatively you can drag and drop the file from the file browser
 
@@ -112,13 +112,13 @@ Once the LAZ file is downloaded and extracted it can be opened in QGIS.
 <br>
 
 After adding the file QGIS will create a new sub-directory for EPT files indexing the LiDAR points.
-As a result when panning and zooming QGIS will render only subset of points for better performance.
+As a result, when panning and zooming QGIS will render only a subset of points for better performance.
 
 ### Check CRS
 
 Point Cloud should have Coordinate Reference System (CRS) assigned but it is not always a case and sometimes we have to specify the projection manually.
 
-* right click on the question mark next to file name
+* right-click on the question mark next to the filename
 * specify the CRS to OSGB 1936 / British National Grid (EPSG:27700)
 
 <br>
@@ -129,8 +129,8 @@ Point Cloud should have Coordinate Reference System (CRS) assigned but it is not
 
 ### Investigate Attributes
 
-Once the file loaded QGIS is looking at the attribute stored in the point cloud in order to apply style for visualisation - it defaults to RGB then Classification and finally  Z values. 
-In our example there is no RGB attributes and the points are visualized based on the Classification.
+Once the file is loaded QGIS is looking at the attributes stored in the point cloud to apply appropriate colouring.
+In our example, the points are visualized based on the classification (Ground, Vegetation, Building, and so on)
 
 <br>
 <center>
@@ -138,48 +138,70 @@ In our example there is no RGB attributes and the points are visualized based on
 </center>
 <br>
 
-### Step 5
+The Identify Map Tool can be used to investigate further information about specific point attributes e.g. XYZ or Intensity.
 
+<br>
 <center>
 <img src="img/image_5.png">
 </center>
+<br>
 
-### Step 6
+The Layer Styling Panel allows changing the point visualization using the additional attributes.
 
+* in the panel change the rendering from *Classification* to *Attribute by Ramp*
+
+* select the *Z* value to shade the points based on their height
+
+<br>
 <center>
 <img src="img/image_6.png">
 </center>
+<br>
 
-### Step 7
+The summary statistics of the attributes can be accessed in the layer properties.
 
-<center>
-<img src="img/image_7.png">
-</center>
+* right-click on the file in the Table of Contents (TOC) 
 
-### Step 8
-
-<center>
-<img src="img/image_8.png">
-</center>
-
-### Step 9
+* select *Properties* and click on the *Statistics* tab
 
 <center>
 <img src="img/image_9.png">
 </center>
 
-### Step 10
+### 3D map view
 
+QGIS can also visualize the points in 3 dimensions.
+
+* go to *View* and select *New 3D Map View*
+
+* go to Layer Styling Panel and select the *3D View* Tab - change the rendering to *Attribute by Ramp* and Attribute to *z*
+
+* in the same Layer Styling Panel select *Symbology* and change rendering to *Extent Only*
+
+* use the navigation tools in 3D view to zoom and rotate the scene
+
+<br>
 <center>
 <img src="img/image_10.png">
 </center>
+<br>
 
-### Step 11
+It is possible to achieve more realistic rendering of the terrain by clicking on the *Options* and selecting *Show Eye Dome Lightning*.
 
+
+<br>
 <center>
 <img src="img/image_11.png">
 </center>
+<br>
 
 # Working with Raster
-# Resources
+...
+
+# References
+[A synthesis of best practice to ensure and evaluate the quality of LiDAR data](https://hub.jncc.gov.uk/assets/ff3a1a65-d423-41ed-9606-750009dca33a)  
+
+[QGIS Point Cloud Walkthrough - VIDEO](https://www.youtube.com/watch?v=Zpw4XfiB47E)
+
 # FAQ
+...
